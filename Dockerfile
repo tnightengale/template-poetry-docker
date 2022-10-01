@@ -15,4 +15,4 @@ WORKDIR /code/
 COPY ["poetry.lock", "pyproject.toml", "/code/"]
 RUN poetry install --no-interaction
 
-COPY . /code/
+COPY [".", "/code/"]
