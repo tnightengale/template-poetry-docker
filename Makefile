@@ -12,10 +12,10 @@ build: ## Build the image
 	@docker build -t $(APP_NAME):latest .
 
 run: ## Start the container
-	@docker run --rm -p 8501:8501 $(APP_NAME):latest
+	@docker run --rm $(APP_NAME):latest
 
 it: ## Start the container interactively in bash
-	@docker run --rm -it --entrypoint bash $(APP_NAME):latest
+	@docker run --rm -it --entrypoint /bin/bash $(APP_NAME):latest
 
 up: ## Rebuild the image and start the container
 	make build && make run
