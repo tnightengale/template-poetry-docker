@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "template-poetry-docker"
-version = "0.1.1"
-description = "A starting point for python apps using poetry and docker."
+version = "0.1.2"
+description = "A starting point for Python apps using Poetry and Docker."
 authors = ["Teghan Nightengale <tnightengale@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 
 [tool.poetry.dev-dependencies]
 
