@@ -1,8 +1,9 @@
-FROM python:3.9.12-slim
+FROM python:3.11.3-slim-bullseye
 
 ENV POETRY_VIRTUALENVS_CREATE=false \
-    POETRY_VERSION=1.1.13 \
-    POETRY_HOME=/usr/local
+    POETRY_VERSION=1.4.2 \
+    POETRY_HOME=/usr/local \
+    WORKING_DIR=/code/
 
 RUN apt-get update \
     && apt-get install -y git curl vim \
@@ -10,9 +11,9 @@ RUN apt-get update \
 
 RUN curl -sSL https://install.python-poetry.org | python -
 
-WORKDIR /code/
+WORKDIR $WORKING_DIR
 
-COPY ["poetry.lock", "pyproject.toml", "/code/"]
+COPY ["poetry.lock", "pyproject.toml", "$WORKING_DIR"]
 RUN poetry install --no-interaction
 
-COPY [".", "/code/"]
+COPY [".", "$WORKING_DIR"]
