@@ -9,23 +9,28 @@
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
 	"dockerFile": "../Dockerfile",
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"files.insertFinalNewline": true,
-        "files.trimFinalNewlines": true,
-        "files.trimTrailingWhitespace": true,
-        "python.pythonPath": "/usr/local/bin/python",
-        "editor.quickSuggestions": {
-            "strings": true
-        },
-        "editor.formatOnSave": true
+	// Set *default* container specific settings.json values on container
+	// create.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"files.insertFinalNewline": true,
+				"files.trimFinalNewlines": true,
+				"files.trimTrailingWhitespace": true,
+				"python.pythonPath": "/usr/local/bin/python",
+				"editor.quickSuggestions": {
+					"strings": true
+				},
+				"editor.formatOnSave": true
+			},
+			"extensions": [
+				"ms-python.python",
+				"eamodio.gitlens"
+			]
+		}
 	},
 	
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"ms-python.python",
-		"eamodio.gitlens"
-	],
 
 	"workspaceMount": "source=${localWorkspaceFolder}/,target=/code,type=bind,consistency=cached", 
 	
